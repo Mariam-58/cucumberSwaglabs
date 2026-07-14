@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 public class CheckoutInformationPage extends BasePage {
 
     private By pageTitle = By.xpath("//span[@class='title']");
-    private By firstName = By.id("first-name");
-    private By lastName = By.id("last-name");
-    private By postalCode = By.id("postal-code");
+    private By fristname = By.id("first-name");
+    private By lastname = By.id("last-name");
+    private By postalcode = By.id("postal-code");
     private By continueButton = By.id("continue");
     private By cancelButton = By.id("cancel");
     private By cartButton = By.xpath("//*[@id='shopping_cart_container']/a");
@@ -23,13 +23,13 @@ public class CheckoutInformationPage extends BasePage {
         return findElement(pageTitle);
     }
     public WebElement getFirstName() {
-        return findElement(firstName);
+        return findElement(fristname);
     }
     public WebElement getLastName() {
-        return findElement(lastName);
+        return findElement(lastname);
     }
     public WebElement getPostalCode() {
-        return findElement(postalCode);
+        return findElement(postalcode);
     }
     public WebElement getContinueButton() {
         return findElement(continueButton);
@@ -41,17 +41,17 @@ public class CheckoutInformationPage extends BasePage {
         return findElement(cartButton);
     }
 
-    public void enterFirstName(String firstname) {
-        findElement(firstName).clear();
-        findElement(firstName).sendKeys(firstname);
+    public void enterFirstName(String firstName) {
+        findElement(fristname).clear();
+        findElement(fristname).sendKeys(firstName);
     }
-    public void enterLastName(String lastname) {
-        findElement(lastName).clear();
-        findElement(lastName).sendKeys(lastname);
+    public void enterLastName(String lastName) {
+        findElement(lastname).clear();
+        findElement(lastname).sendKeys(lastName);
     }
-    public void enterPostalCode(String postcode) {
-        findElement(postalCode).clear();
-        findElement(postalCode).sendKeys(postcode);
+    public void enterPostalCode(String zipCode) {
+        findElement(postalcode).clear();
+        findElement(postalcode).sendKeys(zipCode);
     }
 
     public CheckoutOverviewPage ClickOnContinueButton() {

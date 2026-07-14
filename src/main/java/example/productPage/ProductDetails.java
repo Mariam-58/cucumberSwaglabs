@@ -7,12 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class ProductDetails extends BasePage {
-    private By addToCart = By.id("add-to-cart");
-    private By cartButton = By.xpath("//a[@data-test='shopping-cart-link']");
-    private By productDetName = By.xpath("//div[@data-test='inventory-item-name']");
-    private By productDetDesc = By.xpath("//div[@data-test='inventory-item-desc']");
-    private By productDetPrice = By.xpath("//div[@data-test='inventory-item-price']");
-    private By productDetImg = By.xpath("//*[@data-test = 'item-sauce-labs-backpack-img']");
+
+    private final By addToCart = By.xpath("//button[contains(@id,'add-to-cart')]");
+    private final By cartButton = By.xpath("//a[@data-test='shopping-cart-link']");
+    private final By productDetName = By.xpath("//div[@data-test='inventory-item-name']");
+    private final By productDetDesc = By.xpath("//div[@data-test='inventory-item-desc']");
+    private final By productDetPrice = By.xpath("//div[@data-test='inventory-item-price']");
+    private final By productDetImg = By.xpath("//*[@data-test='item-sauce-labs-backpack-img']");
 
     public ProductDetails(WebDriver driver) {
         super(driver);
@@ -21,30 +22,33 @@ public class ProductDetails extends BasePage {
     public WebElement getImgDet() {
         return findElement(productDetImg);
     }
+
     public WebElement getNameDet() {
         return findElement(productDetName);
     }
+
     public WebElement getDescDet() {
         return findElement(productDetDesc);
     }
+
     public WebElement getPriceDet() {
         return findElement(productDetPrice);
     }
+
     public WebElement getAddToCart() {
         return findElement(addToCart);
     }
+
     public WebElement getCartButton() {
         return findElement(cartButton);
     }
-    public void clickOnAddToCartButton(){
+
+    public void clickOnAddToCartButton() {
         findElement(addToCart).click();
     }
-    public CartPage clickOnCartButton(){
 
+    public CartPage clickOnCartButton() {
         findElement(cartButton).click();
         return new CartPage(driver);
     }
-
-
-
 }

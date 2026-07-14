@@ -32,6 +32,16 @@ public class LoginStepDef extends BaseTest {
         Assert.assertTrue(products.getTitle().isDisplayed());
     }
 
+    @When("enter {string} and {string} invalid")
+    public void enterInvalidUsernameAndPassword(String user, String pass){
+        loginPage.enterInvalidUsername(configManager.getValue(user));
+        loginPage.enterInvalidPassword(configManager.getValue(pass));
+    }
+    @When("click on login button with invalid data")
+    public void clickOnLoginButtonWithInvalidData(){
+        loginPage.clickOnLoginButton();
+    }
+
     @Then("error message is appeared")
     public void verifyTheLoginUnSuccessfully() {
         Assert.assertTrue(loginPage.getErrorMessage().isDisplayed());

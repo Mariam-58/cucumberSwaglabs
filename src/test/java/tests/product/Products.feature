@@ -4,7 +4,7 @@ Feature: Add to cart
     When enter "<user>" and "<pass>"
     And click on login button
     And select "<productName>"
-    And press on add to cart button
+    And click on add to cart button
     Then add to cart button changes to remove
     Examples:
     |user|pass|productName|

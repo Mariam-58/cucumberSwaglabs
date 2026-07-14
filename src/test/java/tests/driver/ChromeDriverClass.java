@@ -14,6 +14,11 @@ public class ChromeDriverClass extends WebDriverFactory {
             driver.manage().window().maximize();
         }
         return driver;
-
+    }
+    public static void quitDriver(){
+        if (driver != null){
+            driver.quit();
+            driver = null;
+        }
     }
 }

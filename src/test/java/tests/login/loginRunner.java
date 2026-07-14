@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-        features = "src/test/java/tests/login/NegativeLogin.feature",
+        features = "src/test/java/tests/login",
         glue = {"tests"},
         plugin = {"pretty","html:report/cucumber-reports.html",
         "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}

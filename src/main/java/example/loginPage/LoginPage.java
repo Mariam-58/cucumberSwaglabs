@@ -35,6 +35,14 @@ public class LoginPage extends BasePage {
         findElement(loginButton).click();
         return new ProductsPage(driver);
     }
+    public void enterInvalidUsername(String invalidusername ){
+        findElement(userName).clear();
+        findElement(userName).sendKeys(invalidusername);
+    }
+    public void enterInvalidPassword(String invalidpassword){
+        findElement(pass).clear();
+        findElement(pass).sendKeys(invalidpassword);
+    }
     public WebElement getErrorMessage() {
         return findElement(By.xpath("//*[@data-test='error']"));
     }

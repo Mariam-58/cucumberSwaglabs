@@ -36,6 +36,16 @@ public class CheckoutStepDef extends BaseTest {
     @Then("checkout complete")
     public void verifyThatTheUserIsOnCheckoutCompletePage() {
         checkoutCompletePage.getPageTitle().isDisplayed();  }
+
+
+    @When("click on checkout button without data")
+    public void pressOnCheckoutButtonWithoutData() {
+        checkoutInformationPage = cartPage.clickOnCheckoutButton();
+    }
+    @When("click on continue button without data")
+    public void clickOnContinueButtonWithoutData() {
+        checkoutOverviewPage = checkoutInformationPage.ClickOnContinueButton();
+    }
     @Then("error checkout message is appeared")
     public void verifyThatErrorMessageIsDisplayedOnCheckoutInformationPage() {
         checkoutInformationPage.getErrorCheckoutMessage().isDisplayed();

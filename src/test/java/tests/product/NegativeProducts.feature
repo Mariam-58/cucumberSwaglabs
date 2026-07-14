@@ -3,9 +3,8 @@ Feature: Add to cart
     Given site is opened
     When enter "<user>" and "<pass>"
     And click on login button
-    And select "<productName>"
-    And press on add to cart button
-    Then error message is appeared
+    And try to select "<productName>"
+    Then user should remain on products page
     Examples:
       |user|pass|productName|
-      |username|password|prdName|
+      |username|password|NonExistentProduct123|
